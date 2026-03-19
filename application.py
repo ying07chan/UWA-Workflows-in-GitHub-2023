@@ -44,6 +44,18 @@ def calculate():
     if operation == "addition":
         number_2 = float(request.form["number_2"])
         result = number_1 + number_2
+    elif operation == "Decimal to Binary":
+        result = bin(int(number_1))[2:]
+    
+    elif operation == "Binary to Decimal":
+        result = int(number_1, 2)
+
+    elif operation == "Decimal to Hex":
+        result = hex(int(number_1))[2:].upper()
+
+    elif operation == "Hex to Decimal":
+        result = int(number_1, 16)
+    
 
     return render_template("index.html", result=result)
 
